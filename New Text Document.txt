@@ -1,0 +1,325 @@
+USE [master]
+GO
+/****** Object:  Database [HRM]    Script Date: 2023-07-26 9:15:08 PM ******/
+CREATE DATABASE [HRM]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'HRM', FILENAME = N'D:\نسخ احتياطي\HRM.mdf' , SIZE = 73728KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'HRM_log', FILENAME = N'D:\نسخ احتياطي\HRM_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT, LEDGER = OFF
+GO
+ALTER DATABASE [HRM] SET COMPATIBILITY_LEVEL = 160
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [HRM].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [HRM] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [HRM] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [HRM] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [HRM] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [HRM] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [HRM] SET AUTO_CLOSE ON 
+GO
+ALTER DATABASE [HRM] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [HRM] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [HRM] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [HRM] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [HRM] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [HRM] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [HRM] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [HRM] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [HRM] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [HRM] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [HRM] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [HRM] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [HRM] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [HRM] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [HRM] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [HRM] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [HRM] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [HRM] SET  MULTI_USER 
+GO
+ALTER DATABASE [HRM] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [HRM] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [HRM] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [HRM] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [HRM] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [HRM] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+ALTER DATABASE [HRM] SET QUERY_STORE = ON
+GO
+ALTER DATABASE [HRM] SET QUERY_STORE (OPERATION_MODE = READ_WRITE, CLEANUP_POLICY = (STALE_QUERY_THRESHOLD_DAYS = 30), DATA_FLUSH_INTERVAL_SECONDS = 900, INTERVAL_LENGTH_MINUTES = 60, MAX_STORAGE_SIZE_MB = 1000, QUERY_CAPTURE_MODE = AUTO, SIZE_BASED_CLEANUP_MODE = AUTO, MAX_PLANS_PER_QUERY = 200, WAIT_STATS_CAPTURE_MODE = ON)
+GO
+USE [HRM]
+GO
+/****** Object:  User [admin]    Script Date: 2023-07-26 9:15:08 PM ******/
+CREATE USER [admin] FOR LOGIN [admin] WITH DEFAULT_SCHEMA=[dbo]
+GO
+ALTER ROLE [db_owner] ADD MEMBER [admin]
+GO
+/****** Object:  Table [dbo].[AD]    Script Date: 2023-07-26 9:15:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AD](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NULL,
+	[Number] [nvarchar](50) NULL,
+	[Picture] [image] NULL,
+	[ID_Name] [int] NULL,
+	[Path] [nvarchar](250) NULL,
+ CONSTRAINT [PK_AD] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Ahkem]    Script Date: 2023-07-26 9:15:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Ahkem](
+	[IDD] [int] IDENTITY(1,1) NOT NULL,
+	[From] [nvarchar](50) NULL,
+	[TO] [nvarchar](50) NULL,
+	[Type] [nvarchar](50) NULL,
+	[Mada] [nvarchar](50) NULL,
+	[Makan] [nvarchar](50) NULL,
+	[Hakm] [nvarchar](50) NULL,
+	[ID_Name] [int] NULL,
+ CONSTRAINT [PK_Ahkem] PRIMARY KEY CLUSTERED 
+(
+	[IDD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Divide]    Script Date: 2023-07-26 9:15:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Divide](
+	[ID] [int] NULL,
+	[Name] [nvarchar](250) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Family]    Script Date: 2023-07-26 9:15:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Family](
+	[ID] [int] NOT NULL,
+	[Name] [nvarchar](250) NULL,
+	[Age] [nvarchar](50) NULL,
+	[Address] [nvarchar](250) NULL,
+	[Jop] [nvarchar](50) NULL,
+	[ID_Name] [int] NULL,
+ CONSTRAINT [PK_Family] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Family_Wife]    Script Date: 2023-07-26 9:15:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Family_Wife](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](250) NOT NULL,
+	[Age] [nvarchar](50) NULL,
+	[Address] [nvarchar](250) NULL,
+	[Jop] [nvarchar](50) NULL,
+	[ID_Name] [int] NULL,
+ CONSTRAINT [PK_Family_Wife] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Names]    Script Date: 2023-07-26 9:15:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Names](
+	[ID] [int] NOT NULL,
+	[Name] [nvarchar](250) NULL,
+	[From_Born] [nvarchar](250) NULL,
+	[Name_Mother] [nvarchar](250) NULL,
+	[Tahsel_drasi] [nvarchar](250) NULL,
+	[makan_aldrasa] [nvarchar](250) NULL,
+	[Tahkases] [nvarchar](250) NULL,
+	[Year_Tahkreg] [nvarchar](250) NULL,
+	[Number_Tam] [nvarchar](50) NULL,
+	[Number_Sakn] [nvarchar](50) NULL,
+	[Serial] [nvarchar](250) NOT NULL,
+	[Number_Wat] [nvarchar](50) NULL,
+	[Date_Wat] [nvarchar](50) NULL,
+	[Date_End_Wat] [nvarchar](50) NULL,
+	[Number_Jan] [nvarchar](50) NULL,
+	[Date_Jan] [nvarchar](50) NULL,
+	[Sahefa] [nvarchar](50) NULL,
+	[Sajel] [nvarchar](50) NULL,
+	[Number_Shah_Jan] [nvarchar](50) NULL,
+	[Date_Shah_Jan] [nvarchar](50) NULL,
+	[Khadme_ask] [nvarchar](50) NULL,
+	[Mahafda] [nvarchar](50) NULL,
+	[Khadhaa] [nvarchar](50) NULL,
+	[Mandake] [nvarchar](50) NULL,
+	[Akrab] [nvarchar](50) NULL,
+	[Mokhtar] [nvarchar](50) NULL,
+	[Number_Asasi] [nvarchar](50) NULL,
+	[Number_Two] [nvarchar](50) NULL,
+	[Number_Akarb] [nvarchar](50) NULL,
+	[Zojee] [nvarchar](50) NULL,
+	[Number_Zojat] [nvarchar](50) NULL,
+	[Name_Zojat] [nvarchar](250) NULL,
+	[Divide] [nvarchar](250) NULL,
+	[Divide_ID] [int] NULL,
+	[Sectional] [nvarchar](250) NULL,
+	[Sectional_ID] [int] NULL,
+	[Picture_Madne] [image] NULL,
+	[Picture_Askre] [image] NULL,
+	[Path_Madne] [nvarchar](250) NULL,
+	[Path_Askre] [nvarchar](250) NULL,
+	[bborn] [nvarchar](50) NULL,
+ CONSTRAINT [PK_Names] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Relative_Fa]    Script Date: 2023-07-26 9:15:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Relative_Fa](
+	[IDD] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](250) NULL,
+	[Age] [nvarchar](50) NULL,
+	[Address] [nvarchar](250) NULL,
+	[Jop] [nvarchar](50) NULL,
+	[ID_Name] [int] NULL,
+ CONSTRAINT [PK_Relative_Fa_1] PRIMARY KEY CLUSTERED 
+(
+	[IDD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Relative_Mo]    Script Date: 2023-07-26 9:15:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Relative_Mo](
+	[IDD] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](250) NULL,
+	[Age] [nvarchar](50) NULL,
+	[Address] [nvarchar](250) NULL,
+	[Jop] [nvarchar](50) NULL,
+	[ID_Name] [int] NULL,
+ CONSTRAINT [PK_Relative_Mo] PRIMARY KEY CLUSTERED 
+(
+	[IDD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Sectional]    Script Date: 2023-07-26 9:15:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Sectional](
+	[ID] [int] NOT NULL,
+	[Name] [nvarchar](250) NULL,
+	[Divide] [nvarchar](250) NULL,
+	[Divide_ID] [int] NULL,
+ CONSTRAINT [PK_Sectional] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Users]    Script Date: 2023-07-26 9:15:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Users](
+	[ID] [int] NOT NULL,
+	[Users] [nvarchar](250) NULL,
+	[Password] [nvarchar](250) NULL,
+	[Type] [nvarchar](250) NULL,
+	[Aksem] [int] NULL,
+	[Names] [int] NULL,
+	[Search] [int] NULL,
+	[AddFile] [int] NULL,
+	[UserAdd] [int] NULL,
+	[Server] [int] NULL,
+	[Reports] [int] NULL,
+	[Show] [int] NULL,
+	[AddOnly] [int] NULL,
+ CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Wife]    Script Date: 2023-07-26 9:15:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Wife](
+	[IDD] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NULL,
+	[Age] [nvarchar](50) NULL,
+	[Address] [nvarchar](50) NULL,
+	[Jop] [nvarchar](50) NULL,
+	[ID_Name] [int] NULL,
+ CONSTRAINT [PK_Wife] PRIMARY KEY CLUSTERED 
+(
+	[IDD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+USE [master]
+GO
+ALTER DATABASE [HRM] SET  READ_WRITE 
+GO

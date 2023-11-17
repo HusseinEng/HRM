@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BAFA73E9-B6E1-473A-BB84-7D72FFC57A24}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HRM</RootNamespace>
+    <AssemblyName>HRM</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8_database_view.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.BonusSkins.v22.2" />
+    <Reference Include="DevExpress.Data.Desktop.v22.2" />
+    <Reference Include="DevExpress.Drawing.v22.2" />
+    <Reference Include="DevExpress.Data.v22.2" />
+    <Reference Include="DevExpress.Images.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v22.2.Core" />
+    <Reference Include="DevExpress.Utils.v22.2" />
+    <Reference Include="DevExpress.XtraBars.v22.2" />
+    <Reference Include="DevExpress.Sparkline.v22.2.Core" />
+    <Reference Include="DevExpress.XtraEditors.v22.2" />
+    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataBase.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AddFamilyMother.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AddFamilyMother.Designer.cs">
+      <DependentUpon>frm_AddFamilyMother.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AddFamilyFather.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AddFamilyFather.Designer.cs">
+      <DependentUpon>frm_AddFamilyFather.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AddFamilyWife.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AddFamilyWife.Designer.cs">
+      <DependentUpon>frm_AddFamilyWife.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Hashed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frm_Hashed.Designer.cs">
+      <DependentUpon>frm_Hashed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_NameAddFile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frm_NameAddFile.Designer.cs">
+      <DependentUpon>frm_NameAddFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_NameDivide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_NameDivide.Designer.cs">
+      <DependentUpon>frm_NameDivide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Settings.Designer.cs">
+      <DependentUpon>frm_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ShowFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ShowFile.Designer.cs">
+      <DependentUpon>frm_ShowFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ShowName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ShowName.Designer.cs">
+      <DependentUpon>frm_ShowName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AddWife.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AddWife.Designer.cs">
+      <DependentUpon>frm_AddWife.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AddName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AddName.Designer.cs">
+      <DependentUpon>frm_AddName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AddSectional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AddSectional.Designer.cs">
+      <DependentUpon>frm_AddSectional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AddDivide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AddDivide.Designer.cs">
+      <DependentUpon>frm_AddDivide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Divide.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frm_Divide.Designer.cs">
+      <DependentUpon>frm_Divide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frm_Main.Designer.cs">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Name.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frm_Name.Designer.cs">
+      <DependentUpon>frm_Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_NameFind.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frm_NameFind.Designer.cs">
+      <DependentUpon>frm_NameFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Sectional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Sectional.Designer.cs">
+      <DependentUpon>frm_Sectional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Users.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frm_Users.Designer.cs">
+      <DependentUpon>frm_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AddFamilyMother.resx">
+      <DependentUpon>frm_AddFamilyMother.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AddFamilyFather.resx">
+      <DependentUpon>frm_AddFamilyFather.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AddFamilyWife.resx">
+      <DependentUpon>frm_AddFamilyWife.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Hashed.resx">
+      <DependentUpon>frm_Hashed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_NameAddFile.resx">
+      <DependentUpon>frm_NameAddFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_NameDivide.resx">
+      <DependentUpon>frm_NameDivide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Settings.resx">
+      <DependentUpon>frm_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ShowFile.resx">
+      <DependentUpon>frm_ShowFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ShowName.resx">
+      <DependentUpon>frm_ShowName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AddWife.resx">
+      <DependentUpon>frm_AddWife.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AddName.resx">
+      <DependentUpon>frm_AddName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AddSectional.resx">
+      <DependentUpon>frm_AddSectional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AddDivide.resx">
+      <DependentUpon>frm_AddDivide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Divide.resx">
+      <DependentUpon>frm_Divide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Main.resx">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Name.resx">
+      <DependentUpon>frm_Name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_NameFind.resx">
+      <DependentUpon>frm_NameFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Sectional.resx">
+      <DependentUpon>frm_Sectional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Users.resx">
+      <DependentUpon>frm_Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2023-05-23_00-13-23.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons8_database_view.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

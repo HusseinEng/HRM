@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM", "HRM\HRM.csproj", "{BAFA73E9-B6E1-473A-BB84-7D72FFC57A24}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupHRM", "Setup1\Setup1.vdproj", "{BDB1A0E8-E444-4089-8C41-EF58BE555A5B}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HRMS", "HRMS\HRMS.vdproj", "{25A9887F-D6E3-4A1C-B035-76A0E48972D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAFA73E9-B6E1-473A-BB84-7D72FFC57A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAFA73E9-B6E1-473A-BB84-7D72FFC57A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAFA73E9-B6E1-473A-BB84-7D72FFC57A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAFA73E9-B6E1-473A-BB84-7D72FFC57A24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDB1A0E8-E444-4089-8C41-EF58BE555A5B}.Debug|Any CPU.ActiveCfg = Debug
+		{BDB1A0E8-E444-4089-8C41-EF58BE555A5B}.Release|Any CPU.ActiveCfg = Release
+		{25A9887F-D6E3-4A1C-B035-76A0E48972D9}.Debug|Any CPU.ActiveCfg = Debug
+		{25A9887F-D6E3-4A1C-B035-76A0E48972D9}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4598844F-7E31-4AA8-AD5D-003037FFE66B}
+	EndGlobalSection
+EndGlobal
